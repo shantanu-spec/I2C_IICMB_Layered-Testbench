@@ -1,0 +1,80 @@
+QuestaSim qrun 2023.4 Utility 2023.10 Oct  9 2023
+Start time: 18:56:25 on Mar 26,2024
+qrun -64 -gui -visualizer -onfinish stop -classdebug -uvmcontrol=all -msgmode both -permit_unmatched_virtual_intf -l run.log -f lab1_filelist.f -sv_seed 123456 -msglimit error -msglimitcount 20 -do "set IterationLimit 140000; set NoQuitOnFinish 1; coverage attribute -name TESTNAME -value test_top; coverage save -onexit test_top.ucdb; do wave.do" -debug,livesim -qwavedb=+signal+memory=1024+report+parameter+class+assertion+uvm_schematic+msg+classmemory=1024+statictaskfunc -top top -covermultiuserenv -designfile design.bin 
+QuestaSim-64 vlog 2023.4 Compiler 2023.10 Oct  9 2023
+Start time: 18:56:25 on Mar 26,2024
+vlog -msglimit error -msglimitcount 20 -covermultiuserenv ../../../verification_ip/ncsu_pkg/ncsu_pkg.sv ../../../verification_ip/ncsu_pkg/ncsu_macros.svh ../../../verification_ip/interface_packages/wb_pkg/src/wb_if.sv ../../../verification_ip/interface_packages/wb_pkg/wb_pkg.sv ../../../verification_ip/interface_packages/i2c_pkg/src/i2c_if.sv ../../../verification_ip/interface_packages/i2c_pkg/i2c_pkg.sv ../../../verification_ip/environment_packages/i2cmb_env_pkg/i2cmb_env_pkg.sv ../../../verification_ip/interface_packages/i2c_pkg/src/i2c_enum_type.sv ../testbench/top.sv -work qrun.out/work -statslog qrun.out/stats_log -writesessionid "+qrun.out/top_dus" -csession=incr -csessionid=3 
+-- Skipping ../../../verification_ip/ncsu_pkg/ncsu_pkg.sv
+-- Skipping ../../../verification_ip/ncsu_pkg/ncsu_macros.svh
+-- Skipping ../../../verification_ip/interface_packages/wb_pkg/src/wb_if.sv
+-- Compiling package wb_pkg
+-- Importing package ncsu_pkg
+** Error: ../../../verification_ip/interface_packages/wb_pkg/wb_pkg.sv(5): Cannot find `include file "../ncsu_pkg/ncsu_macros.svh" in directories:
+    /mnt/apps/public/COE/mg_apps/questa2023.4/questasim/ovm-2.1.2/../verilog_src/ovm-2.1.2/src, /mnt/apps/public/COE/mg_apps/questa2023.4/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src
+** Error: ** while parsing file included at ../../../verification_ip/interface_packages/wb_pkg/wb_pkg.sv(6)
+** at ../../../verification_ip/interface_packages/wb_pkg/src/wb_configuration.svh(2): (vlog-2163) Macro `ncsu_register_object is undefined.
+** Error: (vlog-13069) ** while parsing file included at ../../../verification_ip/interface_packages/wb_pkg/wb_pkg.sv(6)
+** at ../../../verification_ip/interface_packages/wb_pkg/src/wb_configuration.svh(2): near "(": syntax error, unexpected '(', expecting function or task or   .
+** Error: ** while parsing file included at ../../../verification_ip/interface_packages/wb_pkg/wb_pkg.sv(6)
+** at ../../../verification_ip/interface_packages/i2c_pkg/src/i2c_if.sv(185): (vlog-13006) Could not find the package (i2c_enum_type).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+-- Compiling interface i2c_if
+** Error: (vlog-13069) ** while parsing file included at ../../../verification_ip/interface_packages/wb_pkg/wb_pkg.sv(6)
+** at ../../../verification_ip/interface_packages/i2c_pkg/src/i2c_if.sv(213): near "op": syntax error, unexpected IDENTIFIER, expecting ')'.
+** Error: (vlog-13069) ** while parsing file included at ../../../verification_ip/interface_packages/wb_pkg/wb_pkg.sv(6)
+** at ../../../verification_ip/interface_packages/i2c_pkg/src/i2c_if.sv(337): near "op": syntax error, unexpected IDENTIFIER, expecting ')'.
+** Error: (vlog-13069) ** while parsing file included at ../../../verification_ip/interface_packages/wb_pkg/wb_pkg.sv(7)
+** at ../../../verification_ip/interface_packages/wb_pkg/src/wb_transaction.svh(1): near "class": syntax error, unexpected class.
+** Error: ** while parsing file included at ../../../verification_ip/interface_packages/wb_pkg/wb_pkg.sv(7)
+** at ../../../verification_ip/interface_packages/wb_pkg/src/wb_configuration.svh(2): (vlog-13205) Syntax error found in the scope following 'w'. Is there a missing '::'?
+-- Compiling package i2c_pkg
+** Error: ** while parsing file included at ../../../verification_ip/interface_packages/wb_pkg/wb_pkg.sv(7)
+** at ../../../verification_ip/interface_packages/i2c_pkg/i2c_pkg.sv(3): (vlog-13006) Could not find the package (i2c_enum_type).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+** Error: ** while parsing file included at ../../../verification_ip/interface_packages/wb_pkg/wb_pkg.sv(7)
+** at ../../../verification_ip/interface_packages/i2c_pkg/i2c_pkg.sv(4): Cannot find `include file "ncsu_macros.svh" in directories:
+    /mnt/apps/public/COE/mg_apps/questa2023.4/questasim/ovm-2.1.2/../verilog_src/ovm-2.1.2/src, /mnt/apps/public/COE/mg_apps/questa2023.4/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src
+** Error: ** while parsing file included at ../../../verification_ip/interface_packages/wb_pkg/wb_pkg.sv(7)
+** while parsing file included at ../../../verification_ip/interface_packages/i2c_pkg/i2c_pkg.sv(5)
+** at ../../../verification_ip/interface_packages/i2c_pkg/src/i2c_configuration.svh(5): (vlog-2163) Macro `ncsu_register_object is undefined.
+** Error: (vlog-13069) ** while parsing file included at ../../../verification_ip/interface_packages/wb_pkg/wb_pkg.sv(7)
+** while parsing file included at ../../../verification_ip/interface_packages/i2c_pkg/i2c_pkg.sv(5)
+** at ../../../verification_ip/interface_packages/i2c_pkg/src/i2c_configuration.svh(5): near "(": syntax error, unexpected '(', expecting function or task or   .
+-- Compiling package i2cmb_env_pkg
+** Error: ** while parsing file included at ../../../verification_ip/interface_packages/wb_pkg/wb_pkg.sv(7)
+** while parsing file included at ../../../verification_ip/interface_packages/i2c_pkg/i2c_pkg.sv(5)
+** at ../../../verification_ip/environment_packages/i2cmb_env_pkg/i2cmb_env_pkg.sv(4): (vlog-13006) Could not find the package (wb_pkg).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+** Error: ** while parsing file included at ../../../verification_ip/interface_packages/wb_pkg/wb_pkg.sv(7)
+** while parsing file included at ../../../verification_ip/interface_packages/i2c_pkg/i2c_pkg.sv(5)
+** at ../../../verification_ip/environment_packages/i2cmb_env_pkg/i2cmb_env_pkg.sv(5): (vlog-13006) Could not find the package (i2c_enum_type).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+** Error: ** while parsing file included at ../../../verification_ip/interface_packages/wb_pkg/wb_pkg.sv(7)
+** while parsing file included at ../../../verification_ip/interface_packages/i2c_pkg/i2c_pkg.sv(5)
+** at ../../../verification_ip/environment_packages/i2cmb_env_pkg/i2cmb_env_pkg.sv(6): Cannot find `include file "ncsu_macros.svh" in directories:
+    /mnt/apps/public/COE/mg_apps/questa2023.4/questasim/ovm-2.1.2/../verilog_src/ovm-2.1.2/src, /mnt/apps/public/COE/mg_apps/questa2023.4/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src
+** Error: ** while parsing file included at ../../../verification_ip/interface_packages/wb_pkg/wb_pkg.sv(7)
+** while parsing file included at ../../../verification_ip/interface_packages/i2c_pkg/i2c_pkg.sv(5)
+** while parsing file included at ../../../verification_ip/environment_packages/i2cmb_env_pkg/i2cmb_env_pkg.sv(8)
+** at ../../../verification_ip/environment_packages/i2cmb_env_pkg/src/i2cmb_generator.svh(8): (vlog-2730) Undefined variable: 'i2c_transaction'.
+** Error: ** while parsing file included at ../../../verification_ip/interface_packages/wb_pkg/wb_pkg.sv(7)
+** while parsing file included at ../../../verification_ip/interface_packages/i2c_pkg/i2c_pkg.sv(5)
+** while parsing file included at ../../../verification_ip/environment_packages/i2cmb_env_pkg/i2cmb_env_pkg.sv(8)
+** at ../../../verification_ip/environment_packages/i2cmb_env_pkg/src/i2cmb_generator.svh(9): (vlog-2730) Undefined variable: 'wb_transaction'.
+** Error: ** while parsing file included at ../../../verification_ip/interface_packages/wb_pkg/wb_pkg.sv(7)
+** while parsing file included at ../../../verification_ip/interface_packages/i2c_pkg/i2c_pkg.sv(5)
+** while parsing file included at ../../../verification_ip/environment_packages/i2cmb_env_pkg/i2cmb_env_pkg.sv(8)
+** at ../../../verification_ip/environment_packages/i2cmb_env_pkg/src/i2cmb_generator.svh(11): Invalid type 'i2c_transaction'. Please check the type of the variable 'i2c_trans'.
+** Error: (vlog-13069) ** while parsing file included at ../../../verification_ip/interface_packages/wb_pkg/wb_pkg.sv(7)
+** while parsing file included at ../../../verification_ip/interface_packages/i2c_pkg/i2c_pkg.sv(5)
+** while parsing file included at ../../../verification_ip/environment_packages/i2cmb_env_pkg/i2cmb_env_pkg.sv(8)
+** at ../../../verification_ip/environment_packages/i2cmb_env_pkg/src/i2cmb_generator.svh(11): near "[": syntax error, unexpected '[', expecting function or task or   .
+-- Compiling package i2c_enum_type
+** Error: ** Note: (vlog-13301) Maximum number of error reached : '20'.
+** while parsing file included at ../../../verification_ip/interface_packages/wb_pkg/wb_pkg.sv(7)
+** while parsing file included at ../../../verification_ip/interface_packages/i2c_pkg/i2c_pkg.sv(5)
+** while parsing file included at ../../../verification_ip/environment_packages/i2cmb_env_pkg/i2cmb_env_pkg.sv(8)
+** at ../../../verification_ip/environment_packages/i2cmb_env_pkg/src/i2cmb_generator.svh(11): Verilog Compiler exiting
+End time: 18:56:27 on Mar 26,2024, Elapsed time: 0:00:02
+Errors: 20, Warnings: 0
+End time: 18:56:27 on Mar 26,2024, Elapsed time: 0:00:02
+*** Summary *********************************************
+    qrun: Errors:   0, Warnings:   0
+    vlog: Errors:  20, Warnings:   0
+  Totals: Errors:  20, Warnings:   0

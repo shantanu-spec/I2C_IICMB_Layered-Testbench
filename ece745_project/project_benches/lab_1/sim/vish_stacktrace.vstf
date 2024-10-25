@@ -1,0 +1,20 @@
+# Current time Sun Feb 18 12:02:32 2024
+# Program = vish
+# Id = "2023.2_1"
+# Version = "2023.05"
+# Date = "May 12 2023"
+# Platform = "linux"
+# Current time Sun Feb 18 12:02:32 2024
+# Program = vish
+# Id = "2023.2_1"
+# Version = "2023.05"
+# Date = "May 12 2023"
+# Platform = "linux"
+# 0    0xf7fd9430: '<unknown (@0xf7fd9430)>'
+# 1    0xf7fd940b: '<unknown (@0xf7fd940b)>'
+# End of Stack Trace
+
+# 0    0xf7fd9430: '<unknown (@0xf7fd9430)>'
+# 1    0xf7fd940b: '<unknown (@0xf7fd940b)>'
+# 2    0x0001e50b: '<unknown (@0x1e50b)>'
+# 3    0x00000005: '<unknown (@0x5)>'
